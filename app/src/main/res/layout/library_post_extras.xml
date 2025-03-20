@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etTagsLayout"
+        android:layout_width="match_parent"
+        android:minWidth="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="8dp"
+        android:hint="@string/enter_tag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="8dp"
+        android:text="Add Tag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etTagsLayout" />
+
+    <ListView
+        android:id="@+id/tagsListView"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAddTag"
+        tools:listitem="@android:layout/simple_list_item_1" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etLinksLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="300dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="8dp"
+        android:hint="@string/enter_link"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tagsListView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etLinks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="8dp"
+        android:text="Add Link"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etLinksLayout" />
+
+    <ListView
+        android:id="@+id/linksListView"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintBottom_toTopOf="@id/controlsLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAddLink"
+        tools:listitem="@android:layout/simple_list_item_1" />
+
+    <LinearLayout
+        android:id="@+id/controlsLayout"
+        android:layout_width="match_parent"
+        android:minWidth="400dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginVertical="8dp"
+            android:layout_weight="1"
+            android:minWidth="200dp"
+            android:text="@string/dismiss"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etLinksLayout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveChanges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:minWidth="200dp"
+            android:layout_marginVertical="8dp"
+            android:layout_weight="1"
+            android:text="@string/publish_post"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etLinksLayout" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

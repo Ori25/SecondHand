@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Second hand</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="enter_password">Enter password</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account_create_one_now">Don\'t have an account? Create one now.</string>
+    <string name="already_have_an_account_sign_in_now">Already have an account? sign in now</string>
+    <string name="register">Register</string>
+    <string name="enter_years_of_experience">Enter years of experience</string>
+    <string name="enter_full_name">Enter full name</string>
+    <string name="publish_library">Publish Product</string>
+    <string name="enter_library_name">Enter Item name</string>
+    <string name="enter_library_version">Enter Product version</string>
+    <string name="enter_library_description_and_instructions">Enter library description and instructions</string>
+    <string name="enter_tag">Enter tag</string>
+    <string name="save_changes">Save changes</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="publish_post">Publish Item</string>
+    <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+    <string name="enter_link">Enter link</string>
+    <string name="library_feed">Library feed</string>
+    <string name="favorites">Favorites</string>
+    <string name="profile">Profile</string>
+    <string name="create_post">Create post</string>
+    <string name="logout">Logout</string>
+    <string name="no_favorite_posts">No Favorite posts..</string>
+    <string name="search_libraries_on_npm_registry">Search libraries on npm registry..</string>
+    <string name="click_the_search_icon_to_search">Click here to search npm registry</string>
+    <string name="click_here_to_search_posts">Click here to search products</string>
+    <string name="search_app_libraries">Search Second hand products</string>
+    <string name="click_here_to_search_library_posts">Click here to search products</string>
+    <string name="enter_product_name">Enter product name</string>
+    <string name="publish_product">Publish product</string>
+    <string name="enter_product_price">Enter product price</string>
+    <string name="enter_residence_address">Enter residence address</string>
+</resources>

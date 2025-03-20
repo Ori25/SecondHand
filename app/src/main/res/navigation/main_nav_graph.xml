@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.androidproject.ui.main.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_npmRegistryFragment"
+            app:destination="@id/npmRegistryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_postSearchFragment"
+            app:destination="@id/postSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="com.example.androidproject.ui.main.posts.CreatePostFragment"
+        android:label="CreatePostFragment"
+        tools:layout="@layout/fragment_create_post">
+        <argument
+            android:name="existingPost"
+            app:nullable="true"
+            android:defaultValue="@null"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.example.androidproject.ui.main.posts.PostFragment"
+        android:label="PostFragment"
+        tools:layout="@layout/fragment_post">
+        <argument
+            android:name="post"
+            app:argType="string" />
+
+        <argument
+            android:name="owner"
+            app:argType="string" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.androidproject.ui.main.FavoritesFragment"
+        android:label="FavoritesFragment"
+        tools:layout="@layout/fragment_favorites">
+        <action
+            android:id="@+id/action_favoritesFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+        <action
+            android:id="@+id/action_favoritesFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.androidproject.ui.main.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_npm_registry"
+        android:id="@+id/npmRegistryFragment"
+        android:name="com.example.androidproject.ui.main.posts.NpmRegistryFragment"
+        android:label="NpmRegistryFragment" />
+    <fragment
+        tools:layout="@layout/fragment_post_search"
+        android:id="@+id/postSearchFragment"
+        android:name="com.example.androidproject.ui.main.posts.PostSearchFragment"
+        android:label="PostSearchFragment" >
+        <action
+            android:id="@+id/action_postSearchFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+        <action
+            android:id="@+id/action_postSearchFragment_to_postFragment"
+            app:destination="@id/postFragment" />
+    </fragment>
+
+
+</navigation>

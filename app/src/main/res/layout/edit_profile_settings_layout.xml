@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="500dp">
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:scaleType="centerCrop"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/icon" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <EditText
+            android:id="@+id/tvProfileFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter name"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp"
+            android:text="Avi Hadad"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvProfileEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:text="Avi@gmail.com"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/tvProfilePhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:hint="Enter Phone"
+            android:inputType="number"
+            android:minWidth="200dp"
+            android:paddingHorizontal="16dp"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/tvProfileAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:minWidth="200dp"
+            android:hint="Enter Address"
+            android:inputType="text"
+            android:paddingHorizontal="16dp"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</LinearLayout>
