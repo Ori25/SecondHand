@@ -20,7 +20,7 @@ class WeatherService(val httpClient: HttpClient) {
     data class WeatherResponse(val current: Current)
 
     suspend fun getWeatherData(city: String): Resource<WeatherResponse> {
-        val url = "http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=no"
+        val url = "https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=no"
         return httpClient.get<WeatherResponse>(url)
     }
 
