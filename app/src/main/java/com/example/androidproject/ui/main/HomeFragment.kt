@@ -45,6 +45,7 @@ class HomeFragment : Fragment(), LibraryPostListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        mainViewModel.fetchCurrentWeather()
         mainViewModel.currentUser.observeNotNull(viewLifecycleOwner) {
 
             val timeNow = LocalDateTime.now()
@@ -78,10 +79,16 @@ class HomeFragment : Fragment(), LibraryPostListener {
 
 
 
+
         val user = mainViewModel.currentUser.value ?: return
         val adapter = LibraryPostsAdapter(LibraryDataPopulated(currentUser = user), this)
         binding.rvLibraryPosts.adapter = adapter
         binding.CategorySpinner.setSelection(categories.size-1)
+
+
+        mainViewModel.getCurrentWeather().observe(viewLifecycleOwner) {
+            binding.tvWeather.text = String.format("Current weather: %s°C", it.current.temp_c)
+        }
         mainViewModel.libraryData.observe(viewLifecycleOwner) {
             it.toPopulated()?.let { populatedFeedData ->
                 adapter.setData(populatedFeedData)

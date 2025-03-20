@@ -12,6 +12,9 @@ import com.example.androidproject.database.common.UserRepository
 import com.example.androidproject.dto.EditProfileData
 import com.example.androidproject.helpers.LoadingState
 import com.example.androidproject.models.ItemPost
+import com.example.androidproject.network.HttpClient
+import com.example.androidproject.network.Resource
+import com.example.androidproject.network.WeatherService
 import com.example.androidproject.ui.utils.FavoritePostsDataMediator
 import com.example.androidproject.ui.utils.LibraryData
 import com.example.androidproject.ui.utils.MyPostsDataMediator
@@ -28,8 +31,11 @@ class MainViewModel @Inject constructor(
     private val currentUserRepository: CurrentUserRepository,
     private val libraryRepository: LibraryPostRepository,
     private val usersRepository: UserRepository,
+    private val weatherService: WeatherService,
 ) : ViewModel() {
 
+
+    private var currentWeather = MutableLiveData<WeatherService.WeatherResponse>()
     private var _exceptions = MutableLiveData<Exception>()
     private var _loadingState = MutableLiveData<LoadingState>(LoadingState.Loaded)
 
@@ -80,6 +86,27 @@ class MainViewModel @Inject constructor(
         allUsers.stopListening()
     }
 
+    fun fetchCurrentWeather() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val current = currentWeather.value
+            if(current != null) {
+                return@launch
+            }
+            when(val response = weatherService.getWeatherData("Tel%20aviv")) {
+                is Resource.Success -> {
+                    val data = response.data
+                    currentWeather.postValue(data)
+                }
+                is Resource.Failure -> {
+                    _exceptions.postValue(response.exc)
+                }
+            }
+        }
+    }
+
+    fun getCurrentWeather(): LiveData<WeatherService.WeatherResponse> {
+        return currentWeather
+    }
 
     fun createPost(
         post: ItemPost,

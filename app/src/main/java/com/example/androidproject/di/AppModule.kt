@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.example.androidproject.database.local.AppDatabase
 import com.example.androidproject.network.HttpClient
+import com.example.androidproject.network.WeatherService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,6 +30,8 @@ class AppModule {
         return CoroutineScope(Dispatchers.IO)
     }
 
+
+
     @Singleton
     @Provides
     fun provideLocalDatabase(@ApplicationContext context: Context): AppDatabase {
@@ -40,4 +43,9 @@ class AppModule {
     fun provideHttpClient() = HttpClient()
 
 
+    @Singleton
+    @Provides
+    fun provideWeatherService(httpClient: HttpClient): WeatherService {
+        return WeatherService(httpClient)
+    }
 }

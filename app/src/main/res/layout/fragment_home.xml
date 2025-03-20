@@ -57,8 +57,27 @@
             android:layout_height="wrap_content"
             android:text="Second hand"
             android:textAlignment="center" />
+
     </LinearLayout>
 
+
+    <LinearLayout
+        android:id="@+id/weatherLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogout">
+
+        <TextView
+            android:id="@+id/tvWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:text=""/>
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/searchLayout"
@@ -73,7 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@id/btnLogout">
+        app:layout_constraintTop_toBottomOf="@id/weatherLayout">
 
         <TextView
             android:id="@+id/userNameTv"
@@ -116,6 +135,7 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <LinearLayout
         android:id="@+id/searchLayoutLibraryPosts"
         android:layout_width="match_parent"
@@ -156,11 +176,11 @@
         android:id="@+id/noYet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingEnd="8dp"
-        android:paddingStart="16dp"
-        android:textSize="18sp"
         android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="8dp"
         android:text="No product posts yet"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/searchLayoutLibraryPosts" />
 </androidx.constraintlayout.widget.ConstraintLayout>

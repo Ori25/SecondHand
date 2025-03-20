@@ -13,6 +13,7 @@ sealed class Resource<T> {
 
 class HttpClient {
 
+
     suspend inline fun <reified T> get(urlString: String): Resource<T> =
         withContext(Dispatchers.IO) {
             try {
