@@ -56,9 +56,9 @@ class FavoritesFragment : Fragment(), LibraryPostListener {
             }
         }
 
-        binding.btnBack.setOnClickListener {
-            findNavController().popBackStack()
-        }
+//        binding.btnBack.setOnClickListener {
+//            findNavController().popBackStack()
+//        }
     }
 
     override fun onDestroy() {

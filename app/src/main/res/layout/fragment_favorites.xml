@@ -24,11 +24,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/controlsLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/library_post_item" />
 
-    <LinearLayout
+    <!--<LinearLayout                           used to be a back button at the bottom
         android:id="@+id/controlsLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -51,6 +51,6 @@
             app:cornerRadius="20dp"
             app:strokeColor="@color/black"
             app:strokeWidth="1dp" />
-    </LinearLayout>
+    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

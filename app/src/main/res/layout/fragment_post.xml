@@ -4,29 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="0dp"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginVertical="32dp"
-        android:orientation="vertical"
-        android:weightSum="1"
-        app:layout_constraintBottom_toTopOf="@id/controlsLayout"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/controlsLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:id="@+id/ivPost"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="8dp"
-            android:src="@drawable/icon" />
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/ivPost"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="8dp"
+                app:srcCompat="@drawable/icon" />
 
             <TextView
                 android:id="@+id/tvPostTitle"
@@ -34,11 +32,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:layout_marginTop="4dp"
-                android:background="#F8F5F5"
+                android:background="?attr/colorSurface"
                 android:padding="8dp"
                 android:text="React"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
+                android:gravity="start"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -49,50 +47,35 @@
                 android:layout_marginHorizontal="4dp"
                 android:paddingHorizontal="8dp"
                 android:text="by Meta"
-                android:textColor="#929292"
+                android:textColor="?attr/colorSecondary"
                 android:textSize="12sp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_margin="8dp"
-                android:background="#C8C8C8" />
-
+                android:background="?attr/colorOnSurface" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvPostContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:inputType="textMultiLine"
                 android:maxLines="10"
                 android:minHeight="100dp"
                 android:minLines="4"
                 android:paddingHorizontal="12dp"
-                android:scrollbarStyle="insideInset"
                 android:scrollbars="vertical"
                 android:text="@string/lorem" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:id="@+id/layoutLinks"
-            android:layout_weight="0.7"
-            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvPostVersion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-
                 android:text="Version: 2.2.1"
-                android:textAlignment="center"
-                android:textColor="#929292"
+                android:gravity="center"
+                android:textColor="?attr/colorSecondary"
                 android:textStyle="bold" />
 
             <TextView
@@ -103,55 +86,50 @@
                 android:maxLines="2"
                 android:padding="8dp"
                 android:text="Tags: React, web, dev."
-                android:textAlignment="center"
-                android:textColor="#929292" />
-
+                android:gravity="center"
+                android:textColor="?attr/colorSecondary" />
 
             <ListView
                 android:id="@+id/tvPostLinks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
                 android:padding="8dp"
-                android:textAlignment="center"
-                android:textColor="#929292" />
+                android:scrollbars="vertical" />
 
         </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:id="@+id/controlsLayout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center|start"
-        android:orientation="horizontal">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:backgroundTint="@android:color/transparent"
-            android:padding="1dp"
+            android:backgroundTint="?attr/colorSurface"
             android:text="Back"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            app:cornerRadius="20dp"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp" />
+            android:textAlignment="textStart"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="14sp"
+            app:icon="@drawable/baseline_arrow_back_24"
+            app:iconTint="?attr/colorPrimary"
+            app:iconPadding="8dp"
+            app:cornerRadius="8dp"
+            android:layout_weight="1" />
 
         <ImageView
             android:id="@+id/ivFavorite"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/star_border" />
+            android:layout_marginEnd="8dp"
+            app:srcCompat="@drawable/star_border" />
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

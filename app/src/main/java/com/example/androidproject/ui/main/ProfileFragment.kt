@@ -60,9 +60,9 @@ class ProfileFragment : ImagePickerFragment(), LibraryPostListener {
         binding.profileSettingsLayout.ivProfileEdit.setOnClickListener(::showEditProfileDialog)
         // start observing changes on the current user
         observeCurrentUser()
-        binding.btnBack.setOnClickListener {
+        /*binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
-        }
+        }*/
     }
 
     override fun onDestroy() {
