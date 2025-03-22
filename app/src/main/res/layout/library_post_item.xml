@@ -12,7 +12,9 @@
         app:layout_constraintBottom_toTopOf="@+id/seperator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/material_dynamic_tertiary95"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +28,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:layout_marginTop="4dp"
-                android:background="#F8F5F5"
                 android:padding="8dp"
                 android:text="Macbook Pro 15' 2015 "
                 android:textAlignment="textStart"
@@ -75,20 +76,6 @@
                 android:gravity="center|start"
                 android:orientation="horizontal">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnShowMore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:backgroundTint="@android:color/transparent"
-                    android:padding="1dp"
-                    android:text="Show more"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    app:cornerRadius="20dp"
-                    app:strokeColor="@color/black"
-                    app:strokeWidth="1dp" />
-
                 <ImageView
                     android:id="@+id/ivFavorite"
                     android:layout_width="25dp"
@@ -109,6 +96,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:src="@drawable/baseline_delete_24" />
+
+                <TextView
+                    android:id="@+id/tvPostTags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:padding="8dp"
+                    android:text="Tags: React, web, dev."
+                    android:textAlignment="center"
+                    android:textColor="#929292" />
+
             </LinearLayout>
 
         </LinearLayout>
@@ -117,6 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.7"
+            android:background="@color/md_theme_inversePrimary_highContrast"
             android:orientation="vertical">
 
             <TextView
@@ -129,17 +129,6 @@
                 android:textColor="#929292"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvPostTags"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:padding="8dp"
-                android:text="Tags: React, web, dev."
-                android:textAlignment="center"
-                android:textColor="#929292" />
-
 
             <TextView
                 android:id="@+id/tvPostLinks"
@@ -151,6 +140,21 @@
                 android:text="Links: https://github.com/react"
                 android:textAlignment="center"
                 android:textColor="#929292" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShowMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+
+                android:backgroundTint="@android:color/transparent"
+                android:padding="1dp"
+                android:text="Show more"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
 
         </LinearLayout>
 

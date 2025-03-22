@@ -60,7 +60,7 @@ class LibraryPostsAdapter(
             binding.tvOwnerDetails.text = "Publisher: ${owner.fullName} - ${owner.phone}"
             binding.tvOwnerAddress.text = "Address: ${owner.address}"
 
-            binding.tvPostPrice.text = "Price: ${post.price}$"
+            binding.tvPostPrice.text = "Price: ${post.price}Nis"
             binding.tvPostTitle.text = post.title
             binding.tvPostLinks.text = "Links: ${post.links.joinToString(",")}"
             binding.tvPostTags.text = "Tags: ${post.tags.joinToString(",")}"

@@ -78,6 +78,17 @@
                 android:textColor="?attr/colorSecondary"
                 android:textStyle="bold" />
 
+            <!--<TextView
+                android:id="@+id/tvPostLinks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:text="Links: https://github.com/react"
+                android:textAlignment="center"
+                android:textColor="#929292" />-->
+
             <TextView
                 android:id="@+id/tvPostTags"
                 android:layout_width="match_parent"
