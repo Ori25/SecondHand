@@ -45,7 +45,7 @@ class EditProfileDialogFragment(
                 }
                 val newPhone: String? =
                     binding.tvProfilePhone.text.toString().let {
-                        if (it.isBlank() || currentUser.phone == it)
+                        if (it.isBlank() || currentUser.phone == it || it.length != 10)
                             null
                         else
                             it
